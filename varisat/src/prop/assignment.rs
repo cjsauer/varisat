@@ -116,6 +116,10 @@ impl Trail {
         &self.trail
     }
 
+    pub fn decisions(&self) -> &[LitIdx] {
+      &self.decisions
+    }
+
     /// Clear the trail.
     ///
     /// This simply removes all entries without performing any backtracking. Can only be called with

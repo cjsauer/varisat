@@ -1,5 +1,6 @@
 //! Boolean satisfiability solver.
 use std::io;
+use std::ops::Deref;
 
 use partial_ref::{IntoPartialRef, IntoPartialRefMut, PartialRef};
 
@@ -58,6 +59,10 @@ impl<'a> Solver<'a> {
     /// Create a new solver.
     pub fn new() -> Solver<'a> {
         Solver::default()
+    }
+
+    pub fn ctx(&self) -> &Context<'a> {
+      &self.ctx.deref()
     }
 
     /// Change the solver configuration.
